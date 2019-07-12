@@ -4,10 +4,10 @@ Setting up a freshly flashed Raspberry Pi. Tested on macOS with a Raspberry Pi Z
 
 ## SD card setup
 
-* Insert an SD card into your PC and install [Raspbian Stretch Lite](https://www.raspberrypi.org/downloads/raspbian/); follow the [installation guide](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
+* Insert an SD card into your PC and install [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/); follow the [installation guide](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
 * The freshly imaged SD card should now have the name `boot`; you may need to remove and re-insert the SD card after flashing
 * Modify `boot/wpa_supplicant.conf` with your WiFi network credentials
-* Run `scripts/copy-to-boot.sh`; when prompted, type in the path to your SD card
+* Navigate to `scripts/` and run `copy-to-boot.sh`; when prompted, type in the path to your SD card
 * Eject the SD card from your PC and insert it into the Pi; then, power on the Pi
 
 ## SSH-ing into the Pi
@@ -25,7 +25,9 @@ The default password is **raspberry**.
 Update the libraries:
 
 ```bash
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo reboot
 ```
 
 Change password, set up language and regional settings, etc.:
