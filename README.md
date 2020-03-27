@@ -22,7 +22,7 @@ The default password is **raspberry**.
 
 ## Configuring the Pi
 
-Update the libraries:
+First, make sure the Pi is up to date:
 
 ```bash
 sudo apt-get update
@@ -30,11 +30,20 @@ sudo apt-get -y upgrade
 sudo reboot
 ```
 
-Change password, set up language and regional settings, etc.:
+To change the password, set up language and regional settings, etc.:
 
 ```bash
 sudo raspi-config
 ```
+
+To change the hostname, open `/etc/hosts` & edit the following line:
+
+```bash
+# Replace raspberrypi with your desired hostname
+127.0.1.1		raspberrypi
+```
+
+Then, reboot.
 
 ## References
 
